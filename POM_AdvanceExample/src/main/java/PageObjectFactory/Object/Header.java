@@ -18,10 +18,4 @@ public class Header extends POMFactoryClass {
     public void clickLogin(){
         loginLink.click();
     }
-
-    public  void clickProfile(){
-        WebDriverWait wait = new WebDriverWait(this.webDriver, Duration.ofSeconds(15));
-        wait.until(ExpectedConditions.elementToBeClickable(profilePageLink));
-        profilePageLink.click();
-    }
 }

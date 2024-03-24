@@ -1,7 +1,4 @@
-import PageObjectFactory.Object.Header;
-import PageObjectFactory.Object.HomePage;
-import PageObjectFactory.Object.LoginPage;
-import PageObjectFactory.Object.ProfilePage;
+import PageObjectFactory.Object.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -43,6 +40,7 @@ public class ExampleTests {
     public void loginTest(String username, String password, String userId) {
         HomePage homePage = new HomePage(webDriver);
         Header header = new Header(webDriver);
+        HeaderLoggedIn headerLoggedIn = new HeaderLoggedIn(webDriver);
         LoginPage loginPage = new LoginPage(webDriver);
         ProfilePage profilePage = new ProfilePage(webDriver);
 
@@ -61,7 +59,7 @@ public class ExampleTests {
 
         loginPage.clickSignIn();
 
-        header.clickProfile();
+        headerLoggedIn.clickProfile();
         Assert.assertTrue(profilePage.isUrlLoaded(userId), "Current page in not profile page for " + userId + " user");
 
         Assert.assertTrue(profilePage.isUrlLoaded(), "Current page is not profile page");
