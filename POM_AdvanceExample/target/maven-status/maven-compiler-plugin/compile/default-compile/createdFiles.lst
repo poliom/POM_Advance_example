@@ -1,0 +1,6 @@
+PageObjectFactory\Factory\POMFactoryClass.class
+PageObjectFactory\Object\ProfilePage.class
+org\example\Main.class
+PageObjectFactory\Object\Header.class
+PageObjectFactory\Object\LoginPage.class
+PageObjectFactory\Object\HomePage.class
